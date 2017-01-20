@@ -1,0 +1,19 @@
+{
+  "name": "blog-z",
+  "version": "1.0.0",
+  "description": "My blog/portfolio to hold my various coding projects and blogs on my experiences coding these projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZAhmed95/Blog-Z.git"
+  },
+  "author": "Zaheen Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZAhmed95/Blog-Z/issues"
+  },
+  "homepage": "https://github.com/ZAhmed95/Blog-Z#readme"
+}
