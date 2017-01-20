@@ -3,7 +3,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 
 var app = express();
-app.set('port', '3000');
+app.set('port', (process.env.PORT));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
