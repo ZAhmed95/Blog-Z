@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/ZAhmed95/Blog-Z/issues"
   },
-  "homepage": "https://github.com/ZAhmed95/Blog-Z#readme"
+  "homepage": "https://github.com/ZAhmed95/Blog-Z#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "pg": "^6.1.2"
+  }
 }

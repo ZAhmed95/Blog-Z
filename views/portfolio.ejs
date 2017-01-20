@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home-Z</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Zaheen Ahmed - Portfolio</h1>
+      <h4><a href="/blog">Blog</a></h4>
+    </div>
+
+    <div class="projects">
+      <h2>My projects:</h2>
+      <% for (var i = 0; i < rows.length; i++){ %>
+        <div class="projectItem" id=<%= "p" + i%>>
+          <a href=<%=rows[i].url %> target="_blank"><%= rows[i].name %></a>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
