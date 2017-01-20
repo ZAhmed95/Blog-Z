@@ -7,10 +7,26 @@
   <body>
     <div class="header">
       <h1>Zaheen Ahmed - Blog</h1>
+      <h4><a href="/home">Portfolio</a></h4>
     </div>
 
+    <div class="blogPoster">
+      <form class="postForm" action="/blog" method="post">
+        <h3>Title:</h3>
+        <input type="text" name="title" placeholder="Enter post title">
+        <br>
+        <textarea name="body" rows="8" cols="80" placeholder="Enter post message"></textarea>
+        <br>
+        <input type="submit" name="Submit post">
+      </form>
+    </div>
     <div class="posts">
-      
+      <% for(var i = 0; i < rows.length; i++){ %>
+        <div class="blogItem" id=<%= "b" + rows[i].id%>>
+          <h3><%= rows[i].title %></h3>
+          <p><%= rows[i].body %></p>
+        </div>
+      <% } %>
     </div>
   </body>
 </html>

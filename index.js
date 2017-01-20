@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
 
 //connection string for connecting to postgres database
-var connectionString = 'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/blogz';
+var connectionString = process.env.DATABASE_URL;
 
 app.listen(app.get('port'), function(){
   console.log('Node app is running on port', app.get('port'));
@@ -37,5 +37,33 @@ app.get('/home', function(req,res){
 }); //end app.get
 
 app.get('/blog', function(req,res){
-  res.render('blog');
-});
+  pg.connect(connectionString, function(err,client,done){
+    if (err){
+      return console.log('error connecting to database');
+    }
+    client.query('select * from posts;', function(err,result){
+      if (err){
+        return console.log('error querying database');
+      }
+      res.render('blog', result);
+      done();
+      pg.end();
+    }); //end client.query
+  }); //end pg.connect
+}); //end app.get
+
+app.post('/blog', function(req,res){
+  pg.connect(connectionString, function(err,client,done){
+    if (err){
+      return console.log('error connecting to database');
+    }
+    client.query("insert into posts (title, body) values ('" + req.body.title + "', '" + req.body.body + "');", function(err,result){
+      if (err){
+        return console.log('error querying database');
+      }
+      res.redirect('/blog');
+      done();
+      pg.end();
+    }) //end client.query
+  }); //end pg.connect
+}); //end app.post
