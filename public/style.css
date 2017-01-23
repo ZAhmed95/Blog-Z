@@ -1,8 +1,3 @@
-.thumbnail{
-  width: 35px;
-  height: 35px;
-}
-
 body {
     background: rgb(230,230,220);
     font-family: sans-serif;
@@ -49,7 +44,6 @@ a:visited {
 
 .projectItem {
     padding: 5px 0;
-    height: 40px;
 }
 
 .projectItem a {
