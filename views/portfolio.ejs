@@ -16,7 +16,9 @@
         <h2>My projects:</h2>
         <% for (var i = 0; i < rows.length; i++){ %>
           <div class="projectItem" id=<%= "p" + rows[i].id%>>
-            <a href=<%=rows[i].url %> target="_blank"><img class="thumbnail" src=<%= "t" + rows[i].id + ".png"%>> <%= rows[i].name %></a>
+            <a href=<%=rows[i].url %> target="_blank"><img class="thumbnail" src=<%= "t" + rows[i].id + ".png"%>><%= rows[i].name %></a>
+            <br>
+            <p><%= rows[i].description %></p>
           </div>
         <% } %>
       </div>
