@@ -23,7 +23,7 @@
         </form>
       </div>
       <div class="posts">
-        <% for(var i = rows.length-1; i >= 0; i++){ %>
+        <% for(var i = 0; i < rows.length; i++){ %>
           <div class="blogItem" id=<%= "b" + rows[i].id%>>
             <h3><%= rows[i].title %></h3>
             <p><%= rows[i].body %></p>
